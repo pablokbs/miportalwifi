@@ -21,7 +21,11 @@ mysql_select_db("$dbname")or die("cannot select DB");
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/signin.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/portal-narrow.css" rel="stylesheet">
+
+
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -34,12 +38,6 @@ mysql_select_db("$dbname")or die("cannot select DB");
       <script src="js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="ico/favicon.png">
   </head>
    <div class="container">
 
@@ -62,9 +60,9 @@ mysql_select_db("$dbname")or die("cannot select DB");
 
 	<form name="carga" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
-        	<button class="btn btn-large btn-info" type="submit" name="15min" value="15 minutos">15 minutos</button>
-	        <button class="btn btn-large btn-info" type="submit" name="30min" value="30 minutos">30 minutos</button>
-        	<button class="btn btn-large btn-info" type="submit" name="1h" value="1 hora">1 hora</button>
+        	<button class="btn btn-lg btn-info" type="submit" name="15min" value="15 minutos">15 minutos</button>
+	        <button class="btn btn-lg btn-info" type="submit" name="30min" value="30 minutos">30 minutos</button>
+        	<button class="btn btn-lg btn-info" type="submit" name="1h" value="1 hora">1 hora</button>
 
 	</form>
 
@@ -73,16 +71,15 @@ mysql_select_db("$dbname")or die("cannot select DB");
   <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="http://miportalwifi.com.ar/clientes/index2.php">Mi portal wifi</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
+          <a class="navbar-brand" href="http://miportalwifi.com.ar/clientes/index2.php">Mi portal wifi</a>
+          <div class="navbar-collapse collapse">
+            <ul class="navbar-nav">
 	      <li><a href="index2.php">
 		<?php 
 			$logged_user = $_SESSION['myusername']; 
@@ -98,7 +95,7 @@ mysql_select_db("$dbname")or die("cannot select DB");
   	      <li><a href="account.php">Cuenta</a></li>
 	     <li><a href="logout.php">Desconectarse</a></li> 
             </ul>
-          </div><!--/.nav-collapse -->
+          </div><!--/.navbar-collapse -->
         </div>
       </div>
     </div>
