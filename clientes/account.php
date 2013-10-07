@@ -21,8 +21,12 @@ mysql_select_db("$dbname")or die("cannot select DB");
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style>
+    <link href="../include/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/signin.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/portal-narrow.css" rel="stylesheet">
+
+
+<style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
@@ -34,12 +38,6 @@ mysql_select_db("$dbname")or die("cannot select DB");
       <script src="js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="ico/favicon.png">
   </head>
    <div class="container">
 
@@ -87,32 +85,31 @@ mysql_select_db("$dbname")or die("cannot select DB");
   <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="http://miportalwifi.com.ar/clientes/index2.php">Mi portal wifi</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-	      <li><a href="index2.php">
-		<?php 
-			$logged_user = $_SESSION['myusername']; 
-			$credito = checkea_credito($logged_user);
-			if ($credito >= 15) 
-			{
-				echo "Crédito: <span class=\"badge badge-success\">$credito min</span>";
-			} else {
-				echo "Crédito: <span class=\"badge badge-important\">$credito min</span>";
-			}
-		?>
-		</a></li>
-  	      <li><a href="account.php">Cuenta</a></li>
-	     <li><a href="logout.php">Desconectarse</a></li> 
+          <a class="navbar-brand" href=index2.php">Mi portal wifi</a>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index2.php">
+                <?php
+                        $logged_user = $_SESSION['myusername'];
+                        $credito = checkea_credito($logged_user);
+                        if ($credito >= 15)
+                        {
+                                echo "Crédito: <span class=\"badge badge-success\">$credito min</span>";
+                        } else {
+                                echo "Crédito: <span class=\"badge badge-important\">$credito min</span>";
+                        }
+                ?>
+                </a></li>
+              <li><a href="account.php">Cuenta</a></li>
+             <li><a href="logout.php">Desconectarse</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div><!--/.navbar-collapse -->
         </div>
       </div>
     </div>
