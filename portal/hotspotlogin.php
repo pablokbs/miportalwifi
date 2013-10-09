@@ -227,7 +227,7 @@
     echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">
     <html>
     <head>
-	<link href=\"bootstrap/css/bootstrap.css\" rel=\"stylesheet\">
+	<link href=\"../bootstrap/dist/css/bootstrap.css\" rel=\"stylesheet\">
      <title>$title</title>
      <meta http-equiv=\"Cache-control\" content=\"no-cache\">
      <meta http-equiv=\"Pragma\" content=\"no-cache\">
@@ -346,60 +346,27 @@
     if ($result == 2 || $result == 5) {
     
 	?>  
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="../include/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/signin.css" rel="stylesheet">
+    <link href="../include/bootstrap/dist/css/portal-narrow.css" rel="stylesheet">
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="clientes/js/html5shiv.js"></script>
+    <![endif]-->
+
 <meta charset="utf-8">
- <style type="text/css">
-      body {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-      }
-
-      .form-signin {
-        max-width: 300px;
-        padding: 19px 29px 29px;
-        margin: 0 auto 20px;
-        background-color: #fff;
-        border: 1px solid #e5e5e5;
-        -webkit-border-radius: 5px;
-           -moz-border-radius: 5px;
-                border-radius: 5px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-                box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
-        margin-bottom: 10px;
-      }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 16px;
-        height: auto;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-      }
-   </style>
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-
     <div class="container">
 <script>
 	var host='<?php echo "$loginpath?res=popup1&uamip=$uamip&uamport=$uamport"; ?>'; 
 </script>
 <form class="form-signin" name="form1" method="post" action="<?php echo $loginpath; ?>">
-  <h2 class="form-signin-heading">Mi portal wifi</h2>
-  <input type="hidden" name="challenge" value="<?php echo $challenge; ?>">
-  <input type="hidden" name="uamip" value="<?php echo $uamip; ?>">
-  <input type="hidden" name="uamport" value="<?php echo $uamport; ?>">
-  <input type="hidden" name="userurl" value="<?php echo $userurl; ?>">
-	        <input type="text" class="input-block-level" placeholder="PIN" name="UserName">
-        <input type="password" class="input-block-level" placeholder="Contraseña" name="Password">
-	<input class="btn btn-large btn-primary" type="submit" name="button" onClick="javascript:popUp(host)" value="Conectar" />
-
-	<br><br>
+  <!-- <h2 class="form-signin-heading">Mi portal wifi</h2> --!>
 
 
-	<?php
+<?php
 		require_once("../clientes/include/config.php");
 		require_once("../clientes/include/funciones.php");
 
@@ -409,8 +376,18 @@
 
 		$contenido = trae_contenido($_GET['nasid']);
 		echo "$contenido";
-	?>
+	?> <br> 
+  <input type="hidden" name="challenge" value="<?php echo $challenge; ?>">
+  <input type="hidden" name="uamip" value="<?php echo $uamip; ?>">
+  <input type="hidden" name="uamport" value="<?php echo $uamport; ?>">
+  <input type="hidden" name="userurl" value="<?php echo $userurl; ?>">
+        <input type="text" class="form-control" placeholder="PIN" name="UserName">
+        <input type="password" class="form-control" placeholder="Contraseña" name="Password"><br>
+	<div align=center><input class="btn btn-lg btn-primary" type="submit" name="button" onClick="javascript:popUp(host)" value="Conectar" /></div> <br>
+	
+  <div align=center>Servicio brindado por<a href="http://miportalwifi.com.ar/"><img src="../include/logo.png"></a></div><br>
 
+	
 <br>
   </form>
   </div> <!-- /container -->
@@ -423,7 +400,7 @@
     </body>
     </html>
 
-<?
+<?php
     }
      
     if ($result == 1) {
@@ -434,7 +411,7 @@
         <a class="brand" href="http://miportalwifi.com.ar"><p>&copy; Mi portal wifi 2013</p></a>
       </div>
 
-<?
+<?php
       if ($reply) {
           echo "<center> $reply </br></br></center>";
       }
