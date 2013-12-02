@@ -41,6 +41,7 @@ function crea_pin($tiempo,$cliente)
 		mysql_query("INSERT INTO radcheck (username, attribute, op, value) values ('$pin', 'Password', '==', '$pin_pass' )") or die(mysql_error()); 
 		mysql_query("INSERT INTO radcheck (username, attribute, op, value) values ('$pin', 'Max-All-Session', ':=', '$tiempo' )") or die(mysql_error());
 		mysql_query("INSERT INTO radcheck (username, attribute, op, value) values ('$pin', 'NAS-Identifier', '==', '$cliente' )") or die(mysql_error());
+		mysql_query("INSERT INTO radcheck (username, attribute, op, value) values ('$pin', 'Simultaneous-Use', ':=', '1' )") or die(mysql_error());
 		$tiempo_min = $tiempo / 60;
 		mysql_query("UPDATE clients set credit = credit-'$tiempo_min' where username = '$cliente'") or die(mysql_error());
 
