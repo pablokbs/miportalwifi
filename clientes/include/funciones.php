@@ -8,8 +8,7 @@ function conectar($servidor, $user, $pass, $name)
 
 function genera_pin()
 {
-#	$pin = chr(rand(65,90)) . chr(rand(65,90)) . chr(rand(65,90)) . chr(rand(65,90)) . chr(rand(65,90)); // random(ish) 5 character string
-	$pin = substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyz',5)),0,5);
+	$pin = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) ); 
 	return $pin;
 }
 
